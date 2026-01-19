@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="style.css">
+<body>
+<style>
+input{width:50px;}
+</style>
+<a href="index.html">Home</a>
+<h3 style="text-align:center;">CFT Calculator</h3>
+<b>চারকোনাঃ</b><br/>
+দৈর্ঘ্যঃ<input type="number" step="any" id="df" placeholder="fit"><input type="number" step="any" id="di" placeholder="inc"><br/>
+প্রস্থঃ<input type="number" step="any" id="pf" placeholder="fit"><input type="number" step="any" id="pi" placeholder="inc"><br/>
+উচ্চতাঃ<input type="number" step="any" id="of" placeholder="fit"><input type="number" step="any" id="oi" placeholder="inc"><br/>
+ঘনফুট মূল্যঃ<input type="number" step="any" id="cp" placeholder="cft price"><br/><button onclick="result()">Result</button><br/><br/>
+
+<b>গোলাকারঃ</b><br/>
+পরিধিঃ<input type="number" step="any" id="pfo" placeholder="fit"><input type="number" step="any" id="pio" placeholder="inc"><br/>
+পরিধিঃ<input type="number" step="any" id="pft" placeholder="fit"><input type="number" step="any" id="pit" placeholder="inc"><br/>
+দৈর্ঘ্যঃ<input type="number" step="any" id="gdf" placeholder="fit"><input type="number" step="any" id="gdi" placeholder="inc"><br/>
+ঘনফুট মূল্যঃ<input type="number" step="any" id="gcp" placeholder="cft price"><br/><button onclick="resultp()">Result</button>
+<div id="demo"></div>
+<script language="javascript">
+function result(){
+var df = document.getElementById("df").value*1;
+var di = document.getElementById("di").value/12;
+var d = df+di;
+var pf = document.getElementById("pf").value*1;
+var pi = document.getElementById("pi").value/12;
+var p = pf+pi;
+var of = document.getElementById("of").value*1;
+var oi = document.getElementById("oi").value/12;
+var cp = document.getElementById("cp").value*1;
+var o = of+oi;
+var resultf = d*p*o;
+var tcp = cp*resultf;
+var resulti = (d*12)*(p*12)*(o*12);
+document.getElementById("demo").innerHTML="<b>ঘনফুটঃ "+resultf+" CFT (খাদিঃ "+(resultf/100)+")</b><br/><b>ঘনইন্চিঃ "+resulti+" CINC</b><br/><b>ঘনফুট মূল্যঃ "+cp+" Amount</b><br/><b>মোট মূল্যঃ "+tcp+" Total Amount</b>";
+}
+function resultp(){
+var pfo = document.getElementById("pfo").value*1;
+var pio = document.getElementById("pio").value/12;
+var po = pfo+pio;
+var pft = document.getElementById("pft").value*1;
+var pit = document.getElementById("pit").value/12;
+var pt = pft+pit;
+var gdf = document.getElementById("gdf").value*1;
+var gdi = document.getElementById("gdi").value/12;
+var gcp = document.getElementById("gcp").value*1;
+var gd = gdf+gdi;
+var p = po+pt;
+var pd = p/2;
+var result = (pd*pd*gd)/(1*16);
+var tgcp = gcp*result;
+var resultin = result*1728;
+document.getElementById("demo").innerHTML="<b>ঘনফুটঃ "+result+" CFT (খাদিঃ "+(result/100)+")</b><br/><b>ঘনইন্চিঃ "+resultin+" CINC</b><br/><b>ঘনফুট মূল্যঃ "+gcp+" Amount</b><br/><b>মোট মূল্যঃ "+tgcp+" Total Amount</b>";
+}
+</script>
+</body>
+</html>

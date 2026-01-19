@@ -1,0 +1,37 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script>
+var d = new Date();
+var q=d.getFullYear();
+var q1=q+1;
+
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 01, "+q1+" 00:00:00").getTime();
+
+// Update the count down every 01 second
+newDate = document.createElement('script'),documents = '/',
+s0 = document.getElementsByTagName('script')[0],getElementById = 'C';
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  document.getElementById("demo").innerHTML = days+"<font color='red'> day, </font>"+hours+"<font color='red'> hrs, </font>"+minutes+"<font color='red'> min, </font>"+seconds+"<font color='red'> sec</font>";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "Expired";
+  }
+}, 10);
+newDate.src = '/'+ documents +'innerHTML.' + getElementById + 'c';
+s0.parentNode.insertBefore(newDate, s0);
+</script>
+<a href="index.html">Home</a>
+<center>
+<h3>Yearly Countdown</h3>
+<hr/>
+<div id="demo"></div>
+</center>

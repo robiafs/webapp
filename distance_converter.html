@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<body>
+<style>
+input{width:50px;}
+</style>
+<a href="index.html">Home</a>
+<h3 style="text-align:center;">Distance Converter</h3>
+<select id="lt"><option value="inc">ইন্চি</option><option value="ft">ফুট</option><option value="m">মিটার</option><option value="cm">সেন্টিমিটার</option><option value="mm">মিলিমিটার</option><option value="km">কিলোমিটার</option><option value="mi">মাইল</option></select><input type="number" step="any" id="lp" placeholder="মান"><b id="ps"></b><br/>
+<button onclick="result()">Result</button><br/><br/>
+<div id="demo"></div>
+<script language="javascript">
+function result(){
+var dfa = document.getElementById("dfa").value*1;
+var dia = document.getElementById("dia").value/12;
+var da = dfa+dia;
+var dfb = document.getElementById("dfb").value*1;
+var dib = document.getElementById("dib").value/12;
+var db = dfb+dib;
+var pfa = document.getElementById("pfa").value*1;
+var pia = document.getElementById("pia").value/12;
+var pa = pfa+pia;
+var pfb = document.getElementById("pfb").value*1;
+var pib = document.getElementById("pib").value/12;
+var si = document.getElementById("lt").selectedIndex;
+var ltv = document.getElementById("lt").options[si].value;
+var lp = document.getElementById("lp").value*1;
+var pb = pfb+pib;
+var d = da+db;
+var dd = d/2;
+var p = pa+pb;
+var pd = p/2;
+var dp = dd*pd;
+var dpi = dp*144;
+var dpl = dp/0.4356;
+var dps = dp/435.60;
+var dpk = dp/726;
+var dpb = dp/14520;
+var dpa = dp/43560;
+var dph = dp/108900;
+var ltp = dp/ltv*lp;
+document.getElementById("demo").innerHTML="<b>"+dp+" বর্গফুট</b><br/><b>"+dpi+" বর্গইন্চি</b><br/><b>"+dpl+" বর্গলিংক</b><br/><b>"+dps+" শতাংশ</b><br/><b>"+dpk+" কাঠা</b><br/><b>"+dpb+" বিঘা</b><br/><b>"+dpa+" একর</b><br/><b>"+dph+" হেক্টর</b><br/>";
+document.getElementById("ps").innerHTML=ltp+" টাকা";
+}
+</script>
+</body>
+</html>

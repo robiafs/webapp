@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<body>
+<style>
+input{width:50px;}
+</style>
+<a href="index.html">Home</a>
+<h3 style="text-align:center;">Land Calculator</h3>
+<b>চারকোনাঃ</b><br/>
+দৈর্ঘ্যঃ<input type="number" step="any" id="dfa" placeholder="fit"><input type="number" step="any" id="dia" placeholder="inc"><br/>
+দৈর্ঘ্যঃ<input type="number" step="any" id="dfb" placeholder="fit"><input type="number" step="any" id="dib" placeholder="inc"><br/>
+প্রস্থঃ<input type="number" step="any" id="pfa" placeholder="fit"><input type="number" step="any" id="pia" placeholder="inc"><br/>
+প্রস্থঃ<input type="number" step="any" id="pfb" placeholder="fit"><input type="number" step="any" id="pib" placeholder="inc"><br/>
+মূল্য প্রতিঃ<select id="lt"><option value="435.60">শতাংশ</option><option value="726">কাঠা</option><option value="14520">বিঘা</option><option value="43560">একর</option><option value="108900">হেক্টর</option></select><input type="number" step="any" id="lp" placeholder="Price"><b id="ps">টাকা</b><br/>
+<button onclick="result()">Result</button><br/><br/>
+<div id="demo"></div>
+<script language="javascript">
+function result(){
+var dfa = document.getElementById("dfa").value*1;
+var dia = document.getElementById("dia").value/12;
+var da = dfa+dia;
+var dfb = document.getElementById("dfb").value*1;
+var dib = document.getElementById("dib").value/12;
+var db = dfb+dib;
+var pfa = document.getElementById("pfa").value*1;
+var pia = document.getElementById("pia").value/12;
+var pa = pfa+pia;
+var pfb = document.getElementById("pfb").value*1;
+var pib = document.getElementById("pib").value/12;
+var si = document.getElementById("lt").selectedIndex;
+var ltv = document.getElementById("lt").options[si].value;
+var lp = document.getElementById("lp").value*1;
+var pb = pfb+pib;
+var d = da+db;
+var dd = d/2;
+var p = pa+pb;
+var pd = p/2;
+var dp = dd*pd;
+var dpi = dp*144;
+var dpl = dp/0.4356;
+var dps = dp/435.60;
+var dpk = dp/726;
+var dpb = dp/14520;
+var dpa = dp/43560;
+var dph = dp/108900;
+var ltp = dp/ltv*lp;
+document.getElementById("demo").innerHTML="<b>"+dp+" বর্গফুট</b><br/><b>"+dpi+" বর্গইন্চি</b><br/><b>"+dpl+" বর্গলিংক</b><br/><b>"+dps+" শতাংশ</b><br/><b>"+dpk+" কাঠা</b><br/><b>"+dpb+" বিঘা</b><br/><b>"+dpa+" একর</b><br/><b>"+dph+" হেক্টর</b><br/>";
+document.getElementById("ps").innerHTML=ltp+" টাকা";
+}
+</script>
+</body>
+</html>

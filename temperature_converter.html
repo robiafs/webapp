@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<body>
+<style>
+.inputField{text-align:right;}
+</style>
+<a href="index.html">Home</a>
+<h3 style="text-align:center;">Temperature Converter</h3>
+<p><input type="number" step="any" class="inputField" id="c" onkeyup="convert('C')" placeholder="35"> &deg; Celsius</p>
+<p><input type="number" step="any" class="inputField" id="f" onkeyup="convert('F')" placeholder="95"> &deg; Fahrenheit</p>
+<div id="demo"></div>
+<script>
+function convert(degree){
+  var x;
+  if(degree=="C"){
+    x = document.getElementById("c").value * 9 / 5 + 32;
+    document.getElementById("f").value = Math.round(x);
+    document.getElementById("demo").innerHTML = document.getElementById("c").value+"&deg; Celsius = "+Math.round(x)+"&deg; Fahrenheit";
+  }else{
+    x = (document.getElementById("f").value -32) * 5 / 9;
+    document.getElementById("c").value = Math.round(x);
+document.getElementById("demo").innerHTML = document.getElementById("f").value+"&deg; Fahrenheit = "+Math.round(x)+"&deg; Celsius";
+  }
+}
+</script>
+</body>
+</html>
